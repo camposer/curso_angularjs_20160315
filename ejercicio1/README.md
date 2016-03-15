@@ -5,10 +5,17 @@ Crear el CRUD de Producto (ver `ejercicio1.pdf`). Debe utilizar el esqueleto del
 ## Pre-requisitos
 
 1. Instalar [NodeJS](https://nodejs.org/en/download/)
+2. Instalar [Git](https://git-scm.com/download/win). Seleccionar: Windows Command Prompt
 
 ## Para configurar backend
 
 El backend es ofrece una API Rest para productos y compras implementada con NodeJS.
+
+Para configurar las dependencias e iniciar el backend:
+```
+$ cd backend && npm install
+$ npm start
+```
 
 Las llamadas disponibles son (utilizando cURL):
 
@@ -41,7 +48,12 @@ $ curl -X DELETE http://localhost:3000/productos/3
 
 El frontend fue configurado con [Angular Seed](https://github.com/angular/angular-seed)
 
-1. Ejecutar: `npm install`
+1. Ejecutar: 
+```
+$ cd frontend && npm install
+$ npm start
+```
+2. Abrir navegador: `http://localhost:8000/app`
 
 ## Implementación
 
