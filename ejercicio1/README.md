@@ -47,7 +47,12 @@ $ curl -X DELETE http://localhost:3000/productos/3
 
 El frontend fue configurado con [Angular Seed](https://github.com/angular/angular-seed)
 
-1. Ejecutar: `npm install`
+1. Ejecutar: 
+```
+$ cd frontend && npm install
+$ npm start
+```
+2. Abrir navegador: `http://localhost:8000/`
 
 ## Implementación
 
