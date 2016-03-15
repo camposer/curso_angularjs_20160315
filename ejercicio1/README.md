@@ -10,6 +10,12 @@ Crear el CRUD de Producto (ver `ejercicio1.pdf`). Debe utilizar el esqueleto del
 
 El backend es ofrece una API Rest para productos y compras implementada con NodeJS.
 
+Para configurar las dependencias e iniciar el backend:
+```
+$ cd backend && npm install
+$ npm start
+```
+
 Las llamadas disponibles son (utilizando cURL):
 
 - Obtener todos
