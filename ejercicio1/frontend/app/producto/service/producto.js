@@ -4,15 +4,25 @@
 
 	angular
 		.module('myApp.producto')
-		.service('myApp.producto.ProductoService', ProductoService);
+		.service('myApp.producto.ProductoService', 
+			ProductoService);
 
 	function ProductoService() {
 
 		this.obtenerProductos = function() {
-			return {
+			return [
+			{
 				nombre: 'TV',
 				precio: 200
-			};
+			},
+			{
+				nombre: 'Cámara',
+				precio: 300
+			},
+			{
+				nombre: 'DVD',
+				precio: 100
+			}];
 		};
 
 	}

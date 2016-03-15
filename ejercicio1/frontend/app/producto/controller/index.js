@@ -9,7 +9,11 @@
 			IndexCtrl ]);
 
 	function IndexCtrl($scope, productoService) {
-		$scope.producto = productoService.obtenerProductos();
+		var init = function() {
+			$scope.productos = productoService.obtenerProductos();
+		};
+
+		init();
 	}
 
 })();
