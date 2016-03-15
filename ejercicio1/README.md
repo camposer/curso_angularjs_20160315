@@ -53,7 +53,7 @@ El frontend fue configurado con [Angular Seed](https://github.com/angular/angula
 $ cd frontend && npm install
 $ npm start
 ```
-2. Abrir navegador: `http://localhost:8000/`
+2. Abrir navegador: `http://localhost:8000/app`
 
 ## Implementación
 
