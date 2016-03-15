@@ -1,0 +1,82 @@
+<html ng-app="holaMundo">
+<head>
+	<meta charset="utf-8">
+	<style>
+		.fondo-verde { background-color: green; }
+		.letras-rojas { color: red; }
+	</style>
+</head>
+<body ng-controller="HolaMundoController">
+	<p>{{ "hola" + " " + "mundo" }}</p>
+	
+	Nombre: <input type="text" ng-model="producto.nombre"><br>
+	Precio: <input type="number" ng-model="producto.precio"><br>
+	Cantidad: <input type="number" ng-model="producto.cantidad"><br>
+	<input type="button" ng-click="agregarProducto()" value="Agregar"><br>
+	
+	<span ng-controller="NuevoScopeController"></span>
+
+	<ul>
+		<li ng-repeat="producto in productos | orderBy:'-precio'" ng-click="mensajeProducto(producto)">
+			<span ng-class="{ 'fondo-verde':true, 'letras-rojas':isProductoAgotado(producto) }">
+			nombre = {{::producto.nombre}}<br>
+			precio = {{::producto.precio | currency:'€'}}
+			</span>
+		</li>
+	<ul>
+
+	<script src="angular.js"></script>
+	<script>
+		angular
+			.module('holaMundo', [])
+			.controller('NuevoScopeController', ['$rootScope', function($rootScope) {
+				$rootScope.productos = [
+					{
+						nombre: 'TV',
+						precio: 200,
+						cantidad: 0
+					}
+				];
+			}])
+			.controller('HolaMundoController', ['$scope', '$rootScope', function($scope, $rootScope) {
+				$scope.producto = { };
+				
+				$scope.agregarProducto = function() {
+					// Forzando asincronía
+					setTimeout(function() {
+						$rootScope.productos.push($scope.producto);
+						$scope.$apply(); // Refresca los cambios en la vista
+					}, 1000);
+					$scope.producto = {};
+				};
+
+				$scope.mensajeProducto = function(producto) {
+					window.alert('Producto = ' + producto.nombre);
+				};
+
+				$scope.isProductoAgotado = function(producto) {
+					return (producto.cantidad <= 0);
+				};
+/*	
+				$scope.productos = [
+					{
+						nombre: 'TV',
+						precio: 200,
+						cantidad: 0
+					},
+					{
+						nombre: 'Cámara',
+						precio: 300,
+						cantidad: 2
+					},
+					{
+						nombre: 'DVD',
+						precio: 800,
+						cantidad: 3
+					}
+				]
+*/
+			}]);
+	</script>
+</body>
+</html>
