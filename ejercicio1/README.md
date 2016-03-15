@@ -5,6 +5,7 @@ Crear el CRUD de Producto (ver `ejercicio1.pdf`). Debe utilizar el esqueleto del
 ## Pre-requisitos
 
 1. Instalar [NodeJS](https://nodejs.org/en/download/)
+2. Instalar [Git](https://git-scm.com/download/win). Seleccionar: Windows Command Prompt
 
 ## Para configurar backend
 
