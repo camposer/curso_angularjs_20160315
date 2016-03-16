@@ -67,9 +67,11 @@ Orden de implementación sugerido:
 - Mostrar
 - Modificar
 
+Para las validaciones de formularios, proponga una directiva que maneje los mensajes de éxito y error.
+
 ### Parte 2
 
-0. Tienda. Ahora debe agregar las pantallas Inicio y Carrito, además del CRUD de producto que ya hicimos en el ejercicio anterior.
+0. Tienda. Ahora debe agregar las pantallas Inicio y Carrito, además del CRUD de producto que ya hicimos en el ejercicio anterior. Ver: `ejercicio_2.pdf`
 0. Para la lógica de almacenamiento del carrito debe utilizar el sessionStorage
 NOTA: 
 	- Primero implemente la parte visual y luego la parte funcional (sessionStorage)
