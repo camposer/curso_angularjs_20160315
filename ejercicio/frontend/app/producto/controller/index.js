@@ -24,16 +24,30 @@
 		init();
 
 		$scope.guardar = function(form) {
-			$scope.mensajes = [];
+			$scope.mensajes = {
+				success: [],
+				error: []
+			};
 
 			if (form.nombre.$invalid)
-				$scope.mensajes.push('Nombre inválido (debe tener al menos 3 caracteres)');
+				$scope.mensajes.error.push('Nombre inválido (debe tener al menos 3 caracteres)');
 
 			if (form.precio.$invalid || $scope.producto.precio <= 0)
-				$scope.mensajes.push('Precio inválido (debe ser un número mayor a 0)')			
+				$scope.mensajes.error.push('Precio inválido (debe ser un número mayor a 0)')			
 
-			if ($scope.mensajes.length == 0) {
-				window.alert("Todo bien!");
+			if ($scope.mensajes.error.length == 0) {
+				var success = function() {
+					$scope.mensajes.success.push('Producto agregado satisfactoriamente');
+					listarProductos();
+				};
+
+				var error = function(resp) {
+					var msg = (resp) ? ' - ' + resp.data : '';
+					$scope.mensajes.error.push('Error al agregar el producto' + msg);
+				}
+
+
+				productoService.agregarProducto($scope.producto, success, error);
 			}
 		};
 	}

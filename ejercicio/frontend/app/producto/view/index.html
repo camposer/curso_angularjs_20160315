@@ -1,8 +1,14 @@
 <h1>Producto</h1>
 
-<div ng-show="mensajes.length > 0" class="alert alert-danger">
+<div ng-show="mensajes.success.length > 0" class="alert alert-success">
   <ul>
-    <li ng-repeat="m in mensajes">{{m}}</li>
+    <li ng-repeat="m in mensajes.success">{{m}}</li>
+  </ul>
+</div>
+
+<div ng-show="mensajes.error.length > 0" class="alert alert-danger">
+  <ul>
+    <li ng-repeat="m in mensajes.error">{{m}}</li>
   </ul>
 </div>
 

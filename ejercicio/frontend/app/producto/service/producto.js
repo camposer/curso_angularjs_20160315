@@ -19,6 +19,13 @@
 			}).then(success, error);
 		};
 
+		this.agregarProducto = function(producto, success, error) {
+			$http({
+				method: 'post',
+				url: BASE_URL + '/productos',
+				data: producto
+			}).then(success, error);
+		};
 	}
 
 })();
