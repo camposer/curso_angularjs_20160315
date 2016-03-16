@@ -1,6 +1,4 @@
-# Ejercicio 1
-
-Crear el CRUD de Producto (ver `ejercicio1.pdf`). Debe utilizar el esqueleto del frontend y la API Rest de Producto del backend provistos.
+# Ejercicio 
 
 ## Pre-requisitos
 
@@ -57,6 +55,10 @@ $ npm start
 
 ## Implementación
 
+### Parte 1
+
+Crear el CRUD de Producto (ver `ejercicio_1.pdf`). Debe utilizar el esqueleto del frontend y la API Rest de Producto del backend provistos.
+
 Orden de implementación sugerido:
 
 - Listar
@@ -64,3 +66,28 @@ Orden de implementación sugerido:
 - Eliminar
 - Mostrar
 - Modificar
+
+### Parte 2
+
+0. Tienda. Ahora debe agregar las pantallas Inicio y Carrito, además del CRUD de producto que ya hicimos en el ejercicio anterior.
+0. Para la lógica de almacenamiento del carrito debe utilizar el sessionStorage
+NOTA: 
+	- Primero implemente la parte visual y luego la parte funcional (sessionStorage)
+0. Registre las compras y muestre en el 3er tab un gráfico de tarta (angularjs-chart). Modelo del objeto a enviar:
+```
+GET /compras
+POST /compras
+{
+	"productoId": 1,
+	"nombre": "TV",
+    "cantidad": 2
+}
+
+POST /compras
+{
+	"productoId": 2,
+	"nombre": "DVD",
+    "cantidad": 3
+}
+```
+
