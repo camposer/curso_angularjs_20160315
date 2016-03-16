@@ -4,25 +4,19 @@
 
 	angular
 		.module('myApp.producto')
-		.service('myApp.producto.ProductoService', 
-			ProductoService);
+		.service('myApp.producto.ProductoService', [
+				'$http',
+				'BASE_URL',
+				ProductoService
+			]);
 
-	function ProductoService() {
+	function ProductoService($http, BASE_URL) {
 
-		this.obtenerProductos = function() {
-			return [
-			{
-				nombre: 'TV',
-				precio: 200
-			},
-			{
-				nombre: 'Cámara',
-				precio: 300
-			},
-			{
-				nombre: 'DVD',
-				precio: 100
-			}];
+		this.obtenerProductos = function(success, error) {
+			$http({
+				method: 'get',
+				url: BASE_URL + '/productos',
+			}).then(success, error);
 		};
 
 	}
