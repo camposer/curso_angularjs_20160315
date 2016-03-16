@@ -1,16 +1,6 @@
 <h1>Producto</h1>
 
-<div ng-show="mensajes.success.length > 0" class="alert alert-success">
-  <ul>
-    <li ng-repeat="m in mensajes.success">{{m}}</li>
-  </ul>
-</div>
-
-<div ng-show="mensajes.error.length > 0" class="alert alert-danger">
-  <ul>
-    <li ng-repeat="m in mensajes.error">{{m}}</li>
-  </ul>
-</div>
+<app-mensajes src="mensajes"></app-mensajes>
 
 <form name="formProducto" class="form-horizontal" ng-submit="guardar(formProducto)" novalidate>
   <div class="form-group">
@@ -44,10 +34,12 @@
 		<th>Eliminar</th>
 	</tr>
 	<tr ng-repeat="p in productos">
-		<td>{{p.id}}</td>
-		<td>{{p.nombre}}</td>
-		<td>{{p.precio}}</td>
-		<td><a href>mostrar</a></td>
-		<td><a href>eliminar</a></td>
+		<td>{{::p.id}}</td>
+		<td>{{::p.nombre}}</td>
+		<td>{{::p.precio | number:2}}</td>
+		<td><a href ng-click="mostrar(p.id)">mostrar</a></td>
+		<td><a href
+      ng-bootbox-confirm="Eliminar?"
+      ng-bootbox-confirm-action="eliminar(p.id)">eliminar</a></td>
 	</tr>
 </table>

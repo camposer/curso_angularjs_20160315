@@ -26,6 +26,29 @@
 				data: producto
 			}).then(success, error);
 		};
+
+		this.modificarProducto = function(producto, success, error) {
+			$http({
+				method: 'put',
+				url: BASE_URL + '/productos/' + producto.id,
+				data: producto
+			}).then(success, error);
+		};
+
+		this.eliminarProducto = function(id, success, error) {
+			$http({
+				method: 'delete',
+				url: BASE_URL + '/productos/' + id
+			}).then(success, error);
+		};
+
+		this.obtenerProducto = function(id, success, error) {
+			$http({
+				method: 'get',
+				url: BASE_URL + '/productos/' + id
+			}).then(success, error);
+		};		
+
 	}
 
 })();

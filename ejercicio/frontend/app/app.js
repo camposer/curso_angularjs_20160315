@@ -4,6 +4,7 @@
 angular.module('myApp', [
   // Vendor
   'ngRoute',
+  'ngBootbox',
 
   // Scripts
   'myApp.producto'
