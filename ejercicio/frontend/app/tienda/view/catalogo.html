@@ -1,0 +1,18 @@
+<h1>Tienda de artículos electrónicos</h1>
+
+<app-mensajes src="mensajes"></app-mensajes>
+
+<table class="table table-striped">
+	<tr>
+		<th>Nombre</th>
+		<th>Precio</th>
+		<th>Cantidad</th>
+	</tr>
+	<tr ng-repeat="p in productos">
+		<td>{{::p.nombre}}</td>
+		<td>{{::p.precio | number:2}}</td>
+    <td><input type="number" ng-model="p.cantidad"></td>
+	</tr>
+</table>
+
+<button type="button" class="btn btn-primary" ng-click="agregar()">Agregar</button>

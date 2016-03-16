@@ -5,10 +5,12 @@ angular.module('myApp', [
   // Vendor
   'ngRoute',
   'ngBootbox',
+  'ngStorage',
 
   // Scripts
-  'myApp.producto'
+  'myApp.producto',
+  'myApp.tienda'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/producto'});
+  $routeProvider.otherwise({redirectTo: '/catalogo'});
 }]);
