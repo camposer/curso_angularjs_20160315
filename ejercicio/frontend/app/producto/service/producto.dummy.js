@@ -58,7 +58,9 @@
 			$q(function(resolve, reject) {
 				var pos = buscarPos(id);
 				if (pos)
-					resolve(productos[pos]);
+					resolve({
+						data: productos[pos]
+					});
 				else
 	        		resolve();
 	        }).then(success, error);
