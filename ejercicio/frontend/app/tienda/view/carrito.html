@@ -1,0 +1,24 @@
+<h1>Carrito de compras</h1>
+
+<app-mensajes src="mensajes"></app-mensajes>
+
+<table class="table table-striped">
+	<tr>
+		<th>Nombre</th>
+		<th>Precio</th>
+		<th>Cantidad</th>
+		<th>Total</th>
+	</tr>
+	<tr ng-repeat="p in productos">
+		<td>{{::p.nombre}}</td>
+		<td>{{::p.precio | number:2}}</td>
+		<td>{{::p.cantidad | number:2}}</td>
+		<td>{{p.precio * p.cantidad  | number:2}}</td>
+	</tr>
+	<tr>
+		<td colspan="3" class="text-right">Total</td>
+		<td><em>{{obtenerTotal()  | number:2}}</em></td>
+	</tr>
+</table>
+
+<button type="button" class="btn btn-primary" ng-click="comprar()">Comprar</button>

@@ -3,11 +3,12 @@
 		.module('myApp.tienda')
 		.controller('myApp.tienda.CatalogoCtrl', [
 			'$scope',
-			'$sessionStorage',
+			'$location',
+			'myApp.tienda.CarritoService',
 			'myApp.producto.ProductoService',
 			CatalogoCtrl]);
 
-	function CatalogoCtrl($scope, $sessionStorage, productoService) {
+	function CatalogoCtrl($scope, $location, carritoService, productoService) {
 		var init = function() {
 			productoService.obtenerProductos(function(resp) {
 				$scope.productos = resp.data;
@@ -17,18 +18,18 @@
 		init();
 
 		$scope.agregar = function() {
-			var nuevosProductos = [];
-
 			for (var i in $scope.productos) {
 				var p = $scope.productos[i];
 
 				if (angular.isNumber(p.cantidad) && 
 						p.cantidad > 0)
-					nuevosProductos.push(p);
+					carritoService.agregarProducto(p);
 			}
 
-			// TODO Unir productos preexistentes con los nuevos
-			$sessionStorage.productos = nuevosProductos;
+			if (carritoService.obtenerProductos().length > 0) {
+				$location.path('/carrito');
+			}
+
 		};
 	}
 
