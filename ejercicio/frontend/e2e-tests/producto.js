@@ -67,4 +67,19 @@ describe('Pruebas del módulo de Producto', function() {
 
     });
 
+    it('Debería eliminar un producto seleccionado', function() {
+      element
+        .all(by.repeater('p in productos'))
+        .then(function(tr) {
+            tr[0].element(by.css('td:nth-child(5) a')).click();
+        })
+
+      element
+        .all(by.css('.modal-dialog button[type=button]'))
+        .then(function(botones) {
+          console.log(botones[2].getText());
+        });
+
+    });
+
 });

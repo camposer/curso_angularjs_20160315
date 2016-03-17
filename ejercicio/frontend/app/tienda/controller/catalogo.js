@@ -3,12 +3,12 @@
 		.module('myApp.tienda')
 		.controller('myApp.tienda.CatalogoCtrl', [
 			'$scope',
-			'$location',
+			'$state',
 			'myApp.tienda.CarritoService',
 			'myApp.producto.ProductoService',
 			CatalogoCtrl]);
 
-	function CatalogoCtrl($scope, $location, carritoService, productoService) {
+	function CatalogoCtrl($scope, $state, carritoService, productoService) {
 		var init = function() {
 			productoService.obtenerProductos(function(resp) {
 				$scope.productos = resp.data;
@@ -27,7 +27,7 @@
 			}
 
 			if (carritoService.obtenerProductos().length > 0) {
-				$location.path('/carrito');
+				$state.go('tienda-carrito');
 			}
 
 		};

@@ -3,7 +3,8 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   // Vendor
-  'ngRoute',
+  //'ngRoute',
+  'ui.router',
   'ngBootbox',
   'ngStorage',
 
@@ -11,6 +12,6 @@ angular.module('myApp', [
   'myApp.producto',
   'myApp.tienda'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/catalogo'});
+config(['$stateProvider', function($stateProvider) {
+  //$stateProvider.otherwise({redirectTo: '/catalogo'});
 }]);
