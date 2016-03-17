@@ -62,7 +62,7 @@
 						data: productos[pos]
 					});
 				else
-	        		resolve();
+	        		resolve({ data: {} });
 	        }).then(success, error);
 		}
 
