@@ -38,7 +38,7 @@ describe('myApp.producto.IndexCtrl unit test', function () {
     indexCtrl = $controller('myApp.producto.IndexCtrl', {
       $scope: scope,
       'myApp.producto.ProductoService': productoServiceDummy,
-      MensajesFactory: MensajesFactory
+      'myApp.comun.MensajesFactory': MensajesFactory
     });
 
     scope.$digest(); // Obliga la actualización del scope a partir de las promesas pendientes por ejecución

@@ -54,10 +54,14 @@
 	        }).then(success, error);
 		}
 
-		this.obtenerProducto = function(id) {
-			var pos = buscarPos(id);
-			if (pos)
-				return productos[pos];
+		this.obtenerProducto = function(id, success, error) {
+			$q(function(resolve, reject) {
+				var pos = buscarPos(id);
+				if (pos)
+					resolve(productos[pos]);
+				else
+	        		resolve();
+	        }).then(success, error);
 		}
 
 		var buscarPos = function(id) {
