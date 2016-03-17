@@ -10,6 +10,7 @@
 			IndexCtrl ]);
 
 	function IndexCtrl($scope, productoService, MensajesFactory) {
+
 		var listarProductos = function() {
 			var success = function(resp) {
 				$scope.productos = resp.data;
