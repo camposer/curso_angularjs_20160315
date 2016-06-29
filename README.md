@@ -50,3 +50,6 @@
 	- http://karma-runner.github.io/0.12/index.html
 - Yeoman
 	- http://yeoman.io/
+- Directivas personalizadas
+	- https://docs.angularjs.org/guide/directive
+	- http://www.ng-newsletter.com/posts/directives.html
